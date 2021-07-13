@@ -1,0 +1,46 @@
+@model List<Hobby>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style> 
+        .mm { margin-top: 100px;} 
+        table {margin-left: 250px; }
+    </style>
+    <title>Hobby Hub</title>
+</head>
+
+<body>
+    <p>Hello @ViewBag.User.FirstName.</p>
+    <p class="text-right"><a asp-action="LogOut" asp-controller="Home">Logout</a></p>
+
+
+<div class="text-center">
+
+  
+   <h1>Hobbies</h1>
+    <table class="table" style="width: 600px;">
+        <thead class="thead-dark">
+            <th>Name</th>
+            <th>Enthusiasts</th>
+        </thead>
+        @foreach (var hob in Model)
+        {
+            <tr>
+                <td><a asp-action="HobbyDet" asp-controller="Hobby" asp-route-hobbyId="@hob.HobbyId">@hob.Name</a></td> 
+                <td>@hob.Fans.Count</td>
+            </tr>
+        }
+    </table>
+
+</div>
+
+    <div class="mm">
+    <a asp-action="NewHobby" asp-controller="Hobby">Create a Hobby</a>
+    </div>
+</body>
+
+</html>

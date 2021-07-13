@@ -1,0 +1,21 @@
+
+@model Hobby
+<p class="text-right"><a asp-action="Dashboard" asp-controller="Hobby">Hobby Hub</a> | <a
+        asp-action="LogOut" asp-controller="Home">Logout</a></p>
+
+<h1 class="text-center" style="margin-bottom: 100px;" >Edit a Hobby</h1>
+<form asp-action="UpdateHobby" asp-controller="Hobby" method="POST">
+    <div>
+        <label asp-for="Name">Name</label><br>
+        <input asp-for="Name" /><br />
+        <span class="text-danger" asp-validation-for="Name"></span>
+    </div>
+    <div>
+        <label asp-for="Description">Description </label> <br>
+        <input style="width: 300px; hight:500px" asp-for="Description" /><br />
+        <span class="text-danger" asp-validation-for="Description"></span>
+    </div>
+    <br>
+    <br>
+    <button type="submit">Update</button>
+</form>

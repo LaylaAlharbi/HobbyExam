@@ -1,0 +1,41 @@
+﻿@model User
+<div class="text-center">
+    <h1 class="display-4">Hobby Hub!</h1>
+    <div class="row">
+        <div class="col-md-6">
+            <h3 style="margin-bottom: 20px;">Register</h3>
+            <form asp-action="Register" asp-controller="Home" method="POST">
+                <div>
+                    <label style="margin-right: 15px;" asp-for="FirstName">First Name</label>
+                    <input asp-for="FirstName" /> <br />
+                    <span class="text-danger" asp-validation-for="FirstName"></span>
+                </div>
+                <div>
+                    <label style="margin-right: 15px;" asp-for="LastName">Last Name</label>
+                    <input asp-for="LastName" /> <br />
+                    <span class="text-danger" asp-validation-for="LastName"></span>
+                </div>
+                <div>
+                    <label style="margin-right: 19px;"  asp-for="UserName">Username</label>
+                    <input asp-for="UserName" /> <br />
+                    <span class="text-danger" asp-validation-for="UserName"></span>
+                </div>
+                <div>
+                    <label style="margin-right: 23px;"  asp-for="Password">Password</label>
+                    <input asp-for="Password" /> <br />
+                    <span class="text-danger" asp-validation-for="Password"></span>
+                </div>
+                <div>
+                    <label style="margin-right: 2px;" asp-for="Confirm">Confirm PW</label>
+                    <input asp-for="Confirm" /> <br />
+                    <span class="text-danger" asp-validation-for="Confirm"></span>
+                </div>
+                <br>
+                <button type="submit">Sign up Now</button>
+            </form>
+        </div>
+        <div class="col-md-6">
+            <partial name="_LoginPartial.cshtml"></partial>
+        </div>
+    </div>
+</div>

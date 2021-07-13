@@ -1,0 +1,16 @@
+@model LoginUser
+<h3 style="margin-bottom: 20px;">Login</h3>
+<form asp-action="LetMeIn" asp-controller="Home" method="POST">
+    <div>
+        <label style="margin-right: 25px;" asp-for="LoginUserName">Username</label>
+        <input asp-for="LoginUserName" /> <br />
+        <span class="text-danger" asp-validation-for="LoginUserName"></span>
+    </div>
+    <div>
+        <label style="margin-right: 30px;" asp-for="LoginPassword">Password</label>
+        <input asp-for="LoginPassword" /> <br />
+        <span class="text-danger" asp-validation-for="LoginPassword"></span>
+    </div>
+    <br>
+    <button type="submit">Login</button>
+</form>

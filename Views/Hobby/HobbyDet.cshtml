@@ -1,0 +1,38 @@
+@model Hobby
+<p class="text-right"><a asp-action="Dashboard" asp-controller="Hobby">Hobby Hub</a> - <a
+        asp-action="LogOut" asp-controller="Home">LogOut</a></p>
+
+<div class="row">
+    <div class="col-md-6">
+        <h1>@Model.Name</h1>
+        <br>
+        <p style="margin-bottom: 100px;"> Description: @Model.Description</p>
+        <h3>@Model.Name Enthusiasts: </h3>
+        <ul style="border: solid;">
+            @foreach (var fan in Model.Fans)
+            {
+                <p>@fan.Fan.FirstName</p>
+            }
+        </ul>
+
+        @if (Model.PostedBy.UserId == ViewBag.User.UserId)
+        {
+            <a asp-action="Delete" asp-controller="Hobby" asp-route-hobbyId="@Model.HobbyId"><button
+                class="btn btn-sm btn-danger">Delete</button></a>
+            <a asp-action="Edit" asp-controller="Hobby" asp-route-hobbyId="@Model.HobbyId"><button
+            class="btn btn-sm btn-primary">Edit</button></a>
+        } 
+        else if (Model.Fans.Any(f => f.UserId == ViewBag.User.UserId))
+        {
+            <a asp-action="Unlike" asp-controller="Hobby" asp-route-hobbyId="@Model.HobbyId"><button
+                class="btn btn-sm btn-warning">Remove @Model.Name from hobbies!</button></a>
+        } 
+        else
+        {
+             <p>Become an Enthusiast!</p>
+
+            <a asp-action="Like" asp-controller="Hobby" asp-route-hobbyId="@Model.HobbyId"><button
+                class="btn btn-sm btn-primary">Add to Hobbies</button></a>
+        }
+    </div>
+</div>
