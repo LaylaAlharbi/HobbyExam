@@ -107,12 +107,6 @@ namespace HobbyExam.Controllers
             if (ModelState.IsValid)
             {
 
-                if (_db.hobbies.Any(u => u.Name == hobby.Name))
-                {
-                    ModelState.AddModelError("Name", "The Name already in use!");
-                    return View("Edit", hobby);
-                }
-
                 Hobby hobbyFromDB = _db.hobbies.FirstOrDefault(w => w.HobbyId == hobbyId);
                 hobbyFromDB.Name = hobby.Name;
                 hobbyFromDB.Description = hobby.Description;

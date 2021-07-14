@@ -907,9 +907,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/Users/laylaAlharbi/Desktop/layla/Layla-Bootcamp/C_Sharp/HobbyExam/FavoriteMovies.csproj",
-      "projectName": "FavoriteMovies",
-      "projectPath": "/Users/laylaAlharbi/Desktop/layla/Layla-Bootcamp/C_Sharp/HobbyExam/FavoriteMovies.csproj",
+      "projectUniqueName": "/Users/laylaAlharbi/Desktop/layla/Layla-Bootcamp/C_Sharp/HobbyExam/HobbyExam.csproj",
+      "projectName": "HobbyExam",
+      "projectPath": "/Users/laylaAlharbi/Desktop/layla/Layla-Bootcamp/C_Sharp/HobbyExam/HobbyExam.csproj",
       "packagesPath": "/Users/laylaAlharbi/.nuget/packages/",
       "outputPath": "/Users/laylaAlharbi/Desktop/layla/Layla-Bootcamp/C_Sharp/HobbyExam/obj/",
       "projectStyle": "PackageReference",
